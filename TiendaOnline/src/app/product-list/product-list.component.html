@@ -8,6 +8,13 @@
       <td>{{ product.description }}</td>
       <td>{{ product.description }}</td>
       <td ><span class="badge bg-danger text-dark" *ngIf="product.stock==0">SIN STOCK</span><span class="badge bg-warning text-dark" *ngIf="product.clearance">OFERTA imperdible!</span></td>
+      <td>
+        <button class="btn btn-primary btn-sm"(click)='upQuantity(product)'>+</button>
+        {{product.quantity}}
+        <button class="btn btn-primary btn-sm"(click)='downQuantity(product)'>-</button>
+      </td>
+      
+      
     </tr>
   </tbody>
 </table>

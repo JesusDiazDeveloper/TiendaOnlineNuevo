@@ -15,27 +15,39 @@ export class ProductListComponent {
       price: 5000,
       description : "esta es la descripcion del tele",
       image: "assets/img/TVSamsung1.jpeg",
-      stock: 0,
+      stock: 3,
       clearance: false,
+      quantity: 0,
     },
     {
       name : "TV samsung YYYYY",
       price: 5000,
       description : "esta es la descripcion del tele",
       image: "assets/img/TVSamsung1.jpeg",
-      stock: 24,
+      stock: 4,
       clearance: true,
-
+      quantity: 0,
+      
     },
     {
       name : "TV samsung ZZZZ",
       price: 5000,
       description : "esta es la descripcion del tele",
       image: "assets/img/TVSamsung1.jpeg",
-      stock: 45,
+      stock: 0,
       clearance: false,
+      quantity: 0,
     },
 
   ]
+
+  upQuantity(product : product):void{
+    if(product.quantity<product.stock)
+      product.quantity++;
+  }
+  downQuantity(product : product):void{
+    if(product.quantity>0)
+      product.quantity--;
+  }
 
 }
