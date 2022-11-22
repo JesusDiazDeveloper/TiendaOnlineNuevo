@@ -1,0 +1,13 @@
+
+<table class="table">
+  <tbody>
+          <tr *ngFor="let product of products" [ngClass]="{'clearance':product.clearance}"> 
+      <td><img [src]="product.image" [alt]="product.name"></td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.description }}</td>
+      <td ><span class="badge bg-danger text-dark" *ngIf="product.stock==0">SIN STOCK</span><span class="badge bg-warning text-dark" *ngIf="product.clearance">OFERTA imperdible!</span></td>
+    </tr>
+  </tbody>
+</table>
