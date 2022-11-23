@@ -1,24 +1,50 @@
-<table class="table">
+<div >
+
+
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Descripcion</th>
+      <th>Stock</th>
+      <th>Solicitar</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr *ngFor="let product of products" [ngClass]="{'clearance':product.clearance}"> 
-      <td><img [src]="product.image" [alt]="product.name"></td>
+    <tr
+      *ngFor="let product of products"
+      [ngClass]="{ clearance: product.clearance }"
+    >
+      <td><img [src]="product.image" [alt]="product.name" /></td>
       <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
+      <td>{{ product.price |currency: 'ARS' }} </td>
       <td>{{ product.description }}</td>
-      <td>{{ product.description }}</td>
-      <td ><span class="badge bg-danger text-dark" *ngIf="product.stock==0">SIN STOCK</span><span class="badge bg-warning text-dark" *ngIf="product.clearance">OFERTA imperdible!</span></td>
       <td>
-        <button class="btn btn-primary btn-sm"(click)='upQuantity(product)'>+</button>
-        <input 
-        type="number" 
-        [(ngModel)]="product.quantity"
-        (keyup)="changeQuantity( $event , product )"
-        
+        <span class="badge bg-danger text-dark" *ngIf="product.stock == 0"
+          >SIN STOCK</span
         >
-        <button class="btn btn-primary btn-sm"(click)='downQuantity(product)'>-</button>
+        <span *ngIf="product.stock>0"> {{ product.stock}} </span>
+        <span class="badge bg-warning text-dark" *ngIf="product.clearance"
+          >OFERTA imperdible!</span
+        >
       </td>
-      
-      
+      <td class="d-flex">
+        <button class="btn btn-primary btn-sm" (click)="downQuantity(product)">
+          -
+        </button>
+        <input
+        type="text" class=" inputQuantity"
+        [(ngModel)]="product.quantity"
+        (keypress)="onlyNumbersInInput($event, product)"
+        (focusout)="verifyQuantity($event, product)"
+        />
+        <button class="btn btn-primary btn-sm" (click)="upQuantity(product)">
+          +
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
+</div>
