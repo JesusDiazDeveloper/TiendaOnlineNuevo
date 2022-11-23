@@ -13,7 +13,6 @@ export class ProductListComponent {
     {
       name : "TV samsung X",
       price: 5000,
-      description : "esta es la descripcion del tele",
       image: "assets/img/TVSamsung1.jpeg",
       stock: 3,
       clearance: false,
@@ -22,7 +21,6 @@ export class ProductListComponent {
     {
       name : "TV samsung YYYYY",
       price: 5000,
-      description : "esta es la descripcion del tele",
       image: "assets/img/TVSamsung1.jpeg",
       stock: 4,
       clearance: true,
@@ -32,7 +30,6 @@ export class ProductListComponent {
     {
       name : "TV samsung ZZZZ",
       price: 5000,
-      description : "esta es la descripcion del tele",
       image: "assets/img/TVSamsung1.jpeg",
       stock: 0,
       clearance: false,

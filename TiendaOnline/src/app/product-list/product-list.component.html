@@ -1,4 +1,4 @@
-<div >
+<div>
 
 
 <table class="table text-center">
@@ -7,7 +7,6 @@
       <th></th>
       <th>Producto</th>
       <th>Precio</th>
-      <th>Descripcion</th>
       <th>Stock</th>
       <th>Solicitar</th>
     </tr>
@@ -20,7 +19,6 @@
       <td><img [src]="product.image" [alt]="product.name" /></td>
       <td>{{ product.name }}</td>
       <td>{{ product.price |currency: 'ARS' }} </td>
-      <td>{{ product.description }}</td>
       <td>
         <span class="badge bg-danger text-dark" *ngIf="product.stock == 0"
           >SIN STOCK</span
