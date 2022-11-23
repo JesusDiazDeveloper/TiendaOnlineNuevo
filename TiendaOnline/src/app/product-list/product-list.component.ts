@@ -49,5 +49,8 @@ export class ProductListComponent {
     if(product.quantity>0)
       product.quantity--;
   }
+  changeQuantity(event : Event, product: product):void{
+    console.log(event);
+  }
 
 }

@@ -1,7 +1,6 @@
-
 <table class="table">
   <tbody>
-          <tr *ngFor="let product of products" [ngClass]="{'clearance':product.clearance}"> 
+    <tr *ngFor="let product of products" [ngClass]="{'clearance':product.clearance}"> 
       <td><img [src]="product.image" [alt]="product.name"></td>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
@@ -10,7 +9,12 @@
       <td ><span class="badge bg-danger text-dark" *ngIf="product.stock==0">SIN STOCK</span><span class="badge bg-warning text-dark" *ngIf="product.clearance">OFERTA imperdible!</span></td>
       <td>
         <button class="btn btn-primary btn-sm"(click)='upQuantity(product)'>+</button>
-        {{product.quantity}}
+        <input 
+        type="number" 
+        [(ngModel)]="product.quantity"
+        (keyup)="changeQuantity( $event , product )"
+        
+        >
         <button class="btn btn-primary btn-sm"(click)='downQuantity(product)'>-</button>
       </td>
       
