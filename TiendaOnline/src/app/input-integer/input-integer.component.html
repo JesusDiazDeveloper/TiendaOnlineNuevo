@@ -1,0 +1,21 @@
+<td class="d-flex flex-column">
+  <small *ngIf="quantity>max" class="text-danger font-weight-bold" >supera el stock</small>
+  <small *ngIf="quantity<0" class="text-danger font-weight-bold" >el pedido debe ser mayor a 0</small>
+  <div class="d-flex" >
+
+    <button class="btn btn-primary btn-sm" (click)="downQuantity()">
+      -
+  </button>
+  <input
+  type="text"
+  class="inputQuantity"
+    [(ngModel)]="quantity"
+    (keypress)="onlyNumbersInInput($event)"
+    (focusout)="verifyQuantity($event)"
+    />
+    <button class="btn btn-primary btn-sm" (click)="upQuantity()">
+      +
+    </button>
+    
+  </div>
+</td>

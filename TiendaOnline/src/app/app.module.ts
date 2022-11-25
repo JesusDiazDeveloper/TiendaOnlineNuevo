@@ -8,6 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { ProductMainComponent } from './product-main/product-main.component';
 import { TiendaOnlineAboutComponent } from './tienda-online-about/tienda-online-about.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { TiendaOnlineAboutComponent } from './tienda-online-about/tienda-online-
     CartComponent,
     ProductMainComponent,
     TiendaOnlineAboutComponent,
+    InputIntegerComponent,
   ],
 
   imports: [

@@ -23,25 +23,13 @@
         <span class="badge bg-danger text-dark" *ngIf="product.stock == 0"
           >SIN STOCK</span
         >
-        <span *ngIf="product.stock>0"> {{ product.stock}} </span>
+        <span *ngIf="product.stock > 0"> {{ product.stock }} </span>
         <span class="badge bg-warning text-dark" *ngIf="product.clearance"
           >OFERTA imperdible!</span
         >
       </td>
-      <td class="d-flex">
-        <button class="btn btn-primary btn-sm" (click)="downQuantity(product)">
-          -
-        </button>
-        <input
-        type="text" class=" inputQuantity"
-        [(ngModel)]="product.quantity"
-        (keypress)="onlyNumbersInInput($event, product)"
-        (focusout)="verifyQuantity($event, product)"
-        />
-        <button class="btn btn-primary btn-sm" (click)="upQuantity(product)">
-          +
-        </button>
-      </td>
+      
+      <app-input-integer *ngIf="product.stock != 0" [(quantity)]="product.quantity" [max]="product.stock" ></app-input-integer>
     </tr>
   </tbody>
 </table>

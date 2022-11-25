@@ -38,30 +38,4 @@ export class ProductListComponent {
 
   ]
 
-  upQuantity(product : product):void{
-    if(product.quantity<product.stock)
-      product.quantity++;
-  }
-  downQuantity(product : product):void{
-    if(product.quantity>0)
-      product.quantity--;
-  }
-  
-  //No permite que la cantidad sea mayor a 
-  verifyQuantity(e : any, product: product):void{
-    if(product.quantity>product.stock){
-      alert('Solicitud exede el stock disponible');
-      product.quantity = product.stock;
-    }
-    else if(product.quantity<0){
-      alert('Ingrese un numero mayor a 0');
-      product.quantity=0;
-    }
-  }
-  // Funcion que no me deja escribir otra cosa que no sea numero.
-  onlyNumbersInInput(e : any, product: product):void{
-    if(!((e.key)<=9 && (e.key)>=0) || (e.key==" ")){
-      e.preventDefault();
-  }
-  }
 }
