@@ -1,6 +1,6 @@
-<div>
+<div class="bg-grey-J" >
 
-
+<!-- 
 <table class="table text-center">
   <thead>
     <tr>
@@ -33,5 +33,33 @@
       <button class="btn btn-primary" (click)="addToCart(product)" >Comprar</button>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+
+<div  class="card text-center d-flex align-items-center" style="width: 18rem;"
+*ngFor="let product of products"
+[ngClass]="{ clearance: product.clearance }" >
+
+  <img class="card-img-top " [src]="product.image" [alt]="product.name">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <h5 class="card-title">{{ product.price |currency: 'ARS' }}</h5>
+    <div>
+
+      <span class="badge bg-danger text-dark" *ngIf="product.stock == 0"
+      >SIN STOCK</span
+      >
+      <span *ngIf="product.stock > 0"> Stock: {{ product.stock }} </span>
+      <span class="badge bg-warning text-dark" *ngIf="product.clearance"
+      >OFERTA imperdible!</span
+      >
+    </div>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <app-input-integer *ngIf="product.stock != 0" [(quantity)]="product.quantity" [max]="product.stock" ></app-input-integer>
+      <button class="btn btn-primary" (click)="addToCart(product)" >Comprar</button>
+  </div>
+</div>
+
+
 </div>

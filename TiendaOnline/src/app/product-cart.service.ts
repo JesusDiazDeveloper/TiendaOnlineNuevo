@@ -20,8 +20,8 @@ export class ProductCartService {
       item.quantity += p.quantity;
     }
     this.cartList.next(this._cartlist);
-
  }
+  
 
 
 }
