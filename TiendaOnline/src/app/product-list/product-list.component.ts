@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductCartService } from '../product-cart.service';
+import { ProductDataService } from '../product-data.service';
 import { product } from './product';
 
 @Component({
@@ -9,33 +11,23 @@ import { product } from './product';
 export class ProductListComponent {
   title = "Productos";
 
-  products : product [] = [
-    {
-      name : "TV samsung X",
-      price: 5000,
-      image: "assets/img/TVSamsung1.jpeg",
-      stock: 3,
-      clearance: false,
-      quantity: 0,
-    },
-    {
-      name : "TV samsung YYYYY",
-      price: 5000,
-      image: "assets/img/TVSamsung1.jpeg",
-      stock: 4,
-      clearance: true,
-      quantity: 0,
-      
-    },
-    {
-      name : "TV samsung ZZZZ",
-      price: 5000,
-      image: "assets/img/TVSamsung1.jpeg",
-      stock: 0,
-      clearance: false,
-      quantity: 0,
-    },
+  products : product [] = [];
 
-  ]
 
+ constructor( private cart: ProductCartService,
+  private productsDataService:ProductDataService
+  ){
+ }
+
+ ngOnInit():void{
+  this.productsDataService.getAll()
+  .subscribe(products => this.products = products);
+ }
+
+
+  addToCart(p:product):void{
+    this.cart.addToCart(p);
+    p.stock -= p.quantity;
+    p.quantity=0;
+  }
 }

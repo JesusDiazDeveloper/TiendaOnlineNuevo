@@ -10,6 +10,8 @@ import { ProductMainComponent } from './product-main/product-main.component';
 import { TiendaOnlineAboutComponent } from './tienda-online-about/tienda-online-about.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations:[
@@ -25,6 +27,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

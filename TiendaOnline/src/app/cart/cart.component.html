@@ -1,32 +1,29 @@
-<h3>Carrito De Compras</h3>
-<table class=" table table-primary table-striped">
+<!-- <h3>Carrito De Compras</h3>
+<ul>
+    <li *ngFor="let p of cartList$ | async" >
+        {{p.name}}: {{p.quantity}}
+    </li>
+</ul> -->
+
+<table class=" table table-striped bg-grey-J">
 <thead>
     <tr>
         <th>Producto</th>
         <th>Cantidad</th>
-        <th>Precio</th>
+        <th>Precio Unidad</th>
+        
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td>TV Samsung</td>
-        <td>1</td>
-        <td>50.000</td>
-    </tr>
-    <tr>
-        <td>TV Samsung</td>
-        <td>2</td>
-        <td>100.000</td>
-    </tr>
-    <tr>
-        <td>TV Samsung</td>
-        <td>2</td>
-        <td>100.000</td>
+    <tr *ngFor="let p of cartList$ | async" >
+        <td>{{p.name}} </td>
+        <td>{{p.quantity}} </td>
+        <td>{{p.price}} </td>
     </tr>
 </tbody>
 </table>
-
-<div class="text-end">Total: 150.000</div>
+<!-- *ngFor="let p of cartList$ | async" -->
+<div class="text-end">Total: </div>
 <div class="text-end">
     
     <button>Comprar</button>

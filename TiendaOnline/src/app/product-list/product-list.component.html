@@ -30,6 +30,7 @@
       </td>
       
       <app-input-integer *ngIf="product.stock != 0" [(quantity)]="product.quantity" [max]="product.stock" ></app-input-integer>
+      <button class="btn btn-primary" (click)="addToCart(product)" >Comprar</button>
     </tr>
   </tbody>
 </table>
