@@ -10,44 +10,28 @@ import { product } from '../product-list/product';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent {
-  aux : product[] = [];
-  cantidad: number = 0;
-  // result : number = this.aaa(); 
+  productArr : product[] = [];
   cartList$: Observable<product[]>;
+  // totalPrice$: Observable <number>;
+  totalPrice : number = 0;
+  result : number = 0;
 
   constructor( private cart: ProductCartService,
-    //entiendo que esto esta mal, pero no sabemos como hacer un foreach desde el pipe del html 
     private ProductsDataService:ProductDataService){
-    this.cartList$ = cart.cartList.asObservable()
+    this.cartList$ = cart.cartList.asObservable();
+    this.cart.obsPrice.subscribe(data=>{
+      this.totalPrice=data;
+    })
   }
 
   
-
-
-
-  aaa(): void{
-   console.log(this.cartList$);
-  }
-  //   let total = 0;
-  //   let i  = 0; 
-  //   while (i<this.aux.length){
-  //     total+=this.aux[i].price*this.aux[i].quantity;
-  //     i++;
-  //   }
-  //   return total;
-  // }
-
-//   total():number{
-//     let total=0
-
-//     for (let i in this.cartList$) {
-//         total+=this.cartList$[i].price*this.cartList$[i].quantity;
-//     }
-//     return total;
-//   }
-
   ngOnInit(): void {
+    // this.totalPrice$.subscribe(t => {this.total} = t;)    
   }
-  
 
+  aaa(){
+
+  }
+
+  
 }

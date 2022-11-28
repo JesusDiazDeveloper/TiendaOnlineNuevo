@@ -1,0 +1,21 @@
+
+  <table class="table text-center">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let product of products"
+    >
+      <td><img [src]="product.image" [alt]="product.name" /></td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price |currency: 'ARS' }} </td>
+      <td>{{ product.stock }} </td>
+    </tr>
+  </tbody>
+</table>

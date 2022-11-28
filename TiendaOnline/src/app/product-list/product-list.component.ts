@@ -28,7 +28,6 @@ export class ProductListComponent {
   addToCart(p:product):void{
     this.cart.addToCart(p);
     p.stock -= p.quantity;
-    
     p.quantity=0;
   }
 }

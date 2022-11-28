@@ -10,7 +10,10 @@ import { ProductMainComponent } from './product-main/product-main.component';
 import { TiendaOnlineAboutComponent } from './tienda-online-about/tienda-online-about.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AddProductFormComponent } from './add-product-form/add-product-form.component';
+import { AddProductMainComponent } from './add-product-main/add-product-main.component'
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http'
     ProductMainComponent,
     TiendaOnlineAboutComponent,
     InputIntegerComponent,
+    AddProductComponent,
+    AddProductFormComponent,
+    AddProductMainComponent,
   ],
 
   imports: [

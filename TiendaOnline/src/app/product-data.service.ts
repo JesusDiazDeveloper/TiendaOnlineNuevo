@@ -19,4 +19,8 @@ export class ProductDataService {
     )
     ;
   }
+
+  public add(p:product) : void {
+    this.http.post(URL,p);
+  }
 }
