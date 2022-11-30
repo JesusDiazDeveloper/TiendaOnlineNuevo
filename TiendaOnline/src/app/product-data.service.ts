@@ -12,6 +12,7 @@ export class ProductDataService {
 
   constructor( private http: HttpClient ) { }
 
+  
   public getAll():Observable<product[]> {
     return this.http.get<product[]>(URL)
     .pipe(
@@ -20,7 +21,11 @@ export class ProductDataService {
     ;
   }
 
-  public add(p:product) : void {
-    this.http.post(URL,p);
+  public POST(p:product) : Observable<product> {
+    return this.http.post<product>(URL,p);
+  }
+
+  public remove (p : product) :Observable<product>{
+    return this.http.delete<product>(URL+"/"+ p.id)
   }
 }

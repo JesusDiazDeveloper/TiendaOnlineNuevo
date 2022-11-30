@@ -16,8 +16,7 @@ export class ProductListComponent {
 
  constructor( private cart: ProductCartService,
   private productsDataService:ProductDataService
-  ){
- }
+  ){ }
 
  ngOnInit():void{
   this.productsDataService.getAll()

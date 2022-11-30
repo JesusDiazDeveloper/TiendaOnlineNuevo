@@ -12,8 +12,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AddProductComponent } from './add-product/add-product.component';
-import { AddProductFormComponent } from './add-product-form/add-product-form.component';
-import { AddProductMainComponent } from './add-product-main/add-product-main.component'
+import { AddProductMainComponent } from './add-product-main/add-product-main.component';
 
 
 @NgModule({
@@ -25,7 +24,6 @@ import { AddProductMainComponent } from './add-product-main/add-product-main.com
     TiendaOnlineAboutComponent,
     InputIntegerComponent,
     AddProductComponent,
-    AddProductFormComponent,
     AddProductMainComponent,
   ],
 

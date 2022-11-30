@@ -7,7 +7,7 @@ import { product } from './product-list/product';
 })
 export class ProductCartService {
   //creo una variable privada
-  private _cartlist:product  []=[]
+  private _cartlist:product  []=[];
   private _totalPrice: number = 0;
   
   //creo variables BehaviorSubjects

@@ -1,21 +1,47 @@
+<div class="row">
+  <div class="col-8 bg-grey-J">
 
-  <table class="table text-center">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th>Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let product of products"
-    >
-      <td><img [src]="product.image" [alt]="product.name" /></td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price |currency: 'ARS' }} </td>
-      <td>{{ product.stock }} </td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table text-center">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td><img [src]="product.image" [alt]="product.name" /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency: "ARS" }}</td>
+        <td>{{ product.stock }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="remove(product)">Del</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-4 bg-grey-J">
+
+  <div class="text-center">
+    <div>
+      <input [(ngModel)]="p.name" type="text" placeholder="Nombre" />
+    </div>
+    <div>
+      <input [(ngModel)]="p.price" type="number" placeholder="Precio" />
+    </div>
+    <div>
+      <input required [(ngModel)]="p.image" type="text" placeholder="imagen" />
+    </div>
+    <div>
+      <input required [(ngModel)]="p.stock" type="number" placeholder="stock" />
+    </div>
+    <div *ngIf="error == true" class="text-danger">
+      Debe ingresar todos los campos
+    </div>
+    <button class="btn btn-primary" (click)="add()">Agregar</button>
+  </div>
+</div>
+</div>

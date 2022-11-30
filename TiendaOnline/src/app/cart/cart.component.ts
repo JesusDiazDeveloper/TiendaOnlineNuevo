@@ -29,9 +29,6 @@ export class CartComponent {
     // this.totalPrice$.subscribe(t => {this.total} = t;)    
   }
 
-  aaa(){
-
-  }
 
   
 }

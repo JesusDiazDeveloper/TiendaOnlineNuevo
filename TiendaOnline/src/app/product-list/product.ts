@@ -5,4 +5,5 @@ export interface product {
     stock: number;
     clearance: boolean;
     quantity: number;
+    id?:number;
 }
