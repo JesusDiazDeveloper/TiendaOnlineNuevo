@@ -1,42 +1,6 @@
-<div class="bg-grey-J" >
+<div class="bg-grey-J d-flex flex-row flex-wrap m-3 p-0" >
 
-<!-- 
-<table class="table text-center">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th>Stock</th>
-      <th>Solicitar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let product of products"
-      [ngClass]="{ clearance: product.clearance }"
-    >
-      <td><img [src]="product.image" [alt]="product.name" /></td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price |currency: 'ARS' }} </td>
-      <td>
-        <span class="badge bg-danger text-dark" *ngIf="product.stock == 0"
-          >SIN STOCK</span
-        >
-        <span *ngIf="product.stock > 0"> {{ product.stock }} </span>
-        <span class="badge bg-warning text-dark" *ngIf="product.clearance"
-          >OFERTA imperdible!</span
-        >
-      </td>
-      
-      <app-input-integer *ngIf="product.stock != 0" [(quantity)]="product.quantity" [max]="product.stock" ></app-input-integer>
-      <button class="btn btn-primary" (click)="addToCart(product)" >Comprar</button>
-    </tr>
-  </tbody>
-</table> -->
-
-
-<div  class="card text-center d-flex align-items-center" style="width: 18rem;"
+<div  class="card text-center d-flex flex-row align-items-center card-personalizada mt-3 ms-1 me-1 p-0" style="width: 18rem;"
 *ngFor="let product of products"
 [ngClass]="{ clearance: product.clearance }" >
 
