@@ -12,7 +12,6 @@ import { product } from '../product-list/product';
 export class CartComponent {
   productArr : product[] = [];
   cartList$: Observable<product[]>;
-  // totalPrice$: Observable <number>;
   totalPrice : number = 0;
   result : number = 0;
 
@@ -26,7 +25,6 @@ export class CartComponent {
 
   
   ngOnInit(): void {
-    // this.totalPrice$.subscribe(t => {this.total} = t;)    
   }
 
 
